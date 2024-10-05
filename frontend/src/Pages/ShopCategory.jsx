@@ -13,14 +13,14 @@ const ShopCategory = (props) => {
     <div className="container shopCategorySpace ">
 
       <div className="row">
-        <div className="col-12">
+        <div className="col-12 border border-secondary rounded">
           <img src={props.banner} className='img-fluid shopCategoryImageHeight' ></img>
         </div>
       </div>
 
       <div className="row mt-3 d-flex justify-content-sm-center justify-content-md-between justify-content-center align-items-center">
         <div className="col-md-6 col-lg-4 col-sm-8 col-6 ">
-          <span className='fw-bold'>Showing 1-12</span> out of 36 Products
+          <span className='fw-bold'>Showing 1-12</span> out of 24 Products
         </div>
         <div className="col-md-3 col-lg-2 col-sm-4 col-4 d-flex justify-content-center align-items-center ps-4 pe-4">
           <p className='border rounded-pill p-2'>Sort by <img src={dropDownIcon} /></p>

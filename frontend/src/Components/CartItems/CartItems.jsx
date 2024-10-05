@@ -32,30 +32,6 @@ const CarItems = () => {
         return null
       })}
 
-      <div className="row mt-5 mb-5 d-flex justify-content-between">
-        <div className="col-md-7 col-lg-5 col-sm-8 ">
-          <h3 className='mb-4'>Cart Totals</h3>
-          <div className='d-flex justify-content-between'>
-            <p>SubTotal</p>
-            <p>${getTotalCartAmount()}</p>
-          </div>
-          <hr />
-          <div className='d-flex justify-content-between'>
-            <p>Shipping Fee</p>
-            <p>Free</p>
-          </div>
-          <hr />
-          <div className='d-flex justify-content-between'>
-            <h5>Total</h5>
-            <h5>${getTotalCartAmount()}</h5>
-          </div>
-
-          <button className='mt-5 proceedToCheckoutBtn'>PROCEED TO CHECKOUT</button>
-
-        </div>
-
-      </div>
-
     </div>
   )
 }

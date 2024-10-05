@@ -7,7 +7,7 @@ const NewCollections = () => {
   const [new_collections, setNew_collections] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/newcollection")
+    fetch("http://localhost:3000/newEvents")
       .then((res) => res.json())
       .then((data) => setNew_collections(data))
   }, [])
@@ -18,7 +18,7 @@ const NewCollections = () => {
 
         <div className="row">
           <div className="col-12">
-            <h1 className='text-center mb-1'>NEW RECIPES</h1>
+            <h1 className='text-center mb-1'>NEW EVENTS</h1>
             <div className='collection_underline'></div>
           </div>
         </div>

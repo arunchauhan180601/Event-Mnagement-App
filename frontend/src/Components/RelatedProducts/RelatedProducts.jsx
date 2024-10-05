@@ -9,7 +9,7 @@ const RelatedProducts = ({ product, contextValue }) => {
   return (
     <div className="container mt-5">
       <div className="row ">
-        <h2 className='text-center'>Related Products</h2>
+        <h2 className='text-center'>Related Events</h2>
         <div className='RelatedProductsUnderline'></div>
       </div>
       <div className="row d-flex justify-content-center align-items-center ">

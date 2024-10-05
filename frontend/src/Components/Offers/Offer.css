@@ -5,7 +5,7 @@
 }
 
 .offer-container {
-  background-image: linear-gradient(to bottom, rgb(249, 140, 31), white);
+  background-image: linear-gradient(to bottom, #160979, white);
   border-radius: 5px;
 
 }
@@ -27,7 +27,7 @@
   border-radius: 30px;
 
   margin-top: 20px;
-  background-color: rgb(249, 140, 31);
+  background-color: #160979;
   color: white;
 }
 

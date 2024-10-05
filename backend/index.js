@@ -19,7 +19,7 @@ app.use(express.urlencoded({extended: false}));
 
 
 app.get("/", (req, res)=> {
-  res.send("Welcome to E-commerce backend API");
+  res.send("Welcome to Event Management backend API");
 })
 
 
@@ -63,7 +63,15 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: true
    },
-   ingredients: {
+   details: {
+    type: String,
+    required: true
+   },
+   date: {
+    type: Date,
+    required: true
+   },
+   location: {
     type: String,
     required: true
    },
@@ -105,11 +113,14 @@ app.post("/addProduct", async (req, res)=>{
     const product = new Product({
       id: id,
       name: req.body.name,
+      details : req.body.details,
+      date: req.body.date,
+      location: req.body.location,
       image: req.body.image,
       category: req.body.category,
       new_price: req.body.new_price,
       old_price: req.body.old_price,
-      ingredients: req.body.ingredients,
+     
     });
 
     console.log(product);
@@ -224,20 +235,20 @@ app.post("/login", async (req, res)=> {
 
   // Creating endpoint for newcollection data
 
-  app.get("/newcollection", async (req, res)=>{
+  app.get("/newEvents", async (req, res)=>{
     let products = await Product.find({});
-    let newcollection = products.slice(-8);
-    console.log("NewCollection Fetched");
-    res.send(newcollection)
+    let newEvents = products.slice(-8);
+    console.log("NewEvents Fetched");
+    res.send(newEvents)
   } )
 
     // Creating endpoint for Popular in women 
 
-    app.get("/popularinlunch", async (req, res)=> {
-      let products = await Product.find({category: "lunch"});
-      let popularinlunch = products.slice(0,4);
-      console.log("PopularInLunch Fetched");
-      res.send(popularinlunch)
+    app.get("/popularEvents", async (req, res)=> {
+      let products = await Product.find({category: "UpComing_Event"});
+      let popularEvents = products.slice(0,4);
+      console.log("PopularEvents Fetched");
+      res.send(popularEvents)
     })
 
     // creating middleware to fetch user
@@ -266,7 +277,7 @@ app.post("/login", async (req, res)=> {
         userData.cartData[req.body.itemId] += 1;
         await Users.findOneAndUpdate({_id: req.user.id},{cartData: userData.cartData});
 
-        res.send("Added");
+        res.json({ message: "Added", success: true });
 
      })
 
@@ -282,11 +293,30 @@ app.post("/login", async (req, res)=> {
 
 //  Creating endpoint to get cartData
 
-app.post("/getcart", fetchUser, async (req, res)=> {
+// app.post("/getcart", fetchUser, async (req, res)=> {
+//   console.log("Getcart");
+//   let userData = await Users.findOne({_id: req.user.id});
+//    res.json(userData.cartData);
+// })
+
+// Creating endpoint to get cartData
+// Creating endpoint to get cartData
+app.post("/getcart", fetchUser, async (req, res) => {
   console.log("Getcart");
-  let userData = await Users.findOne({_id: req.user.id});
-   res.json(userData.cartData);
-})
+  
+  // Find user data
+  let userData = await Users.findOne({ _id: req.user.id });
+
+  // Check if user data exists
+  if (!userData) {
+    return res.status(404).json({ success: false, message: "User not found" });
+  }
+
+  // Return the cartData if userData is found
+  res.json({ success: true, cartData: userData.cartData });
+});
+
+
 
 
 app.listen(PORT, ()=> {

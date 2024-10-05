@@ -11,9 +11,9 @@ import Shop from "./Pages/shop"
 import Footer from "./Components/Footer/Footer"
 
 
-import breakfast_banner from "./Components/Assets/breakfast_banner1.avif"
-import lunch_banner from "./Components/Assets/lunch_banner1.jpg"
-import dinner_banner from "./Components/Assets/dinner_banner.avif"
+
+import UpComing_Events from "./Components/Assets/UpComing-event.jpg"
+import NextMonth_Events from "./Components/Assets/NextMonth-Events.jpeg"
 
 
 function App() {
@@ -25,9 +25,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Shop />} > </Route>
-          <Route path="/dinners" element={<ShopCategory banner={dinner_banner} category="dinner" />} > </Route>
-          <Route path="/lunches" element={<ShopCategory banner={lunch_banner} category="lunch" />} > </Route>
-          <Route path="/breakfasts" element={<ShopCategory banner={breakfast_banner} category="breakfast" />} > </Route>
+          <Route path="/UpComing_Event" element={<ShopCategory banner={UpComing_Events} category="UpComing_Event" />} > </Route>
+          <Route path="/NextMonth_Event" element={<ShopCategory banner={NextMonth_Events} category="NextMonth_Event" />} > </Route>
           <Route path="/product" element={<Product />} >
             <Route path=":productId" element={<Product />} ></Route>
           </Route>

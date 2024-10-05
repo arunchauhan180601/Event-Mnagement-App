@@ -15,10 +15,12 @@ const AddProduct = () => {
   const [productDetails, setProductDetails] = useState({
     name: "",
     image: "",
-    category: "lunch",
+    category: "UpComing_Event",
     old_price: "",
     new_price: "",
-    ingredients: ""
+    details: "",
+    date: "",
+    location: ""
   })
 
   const changeHandler = (e) => {
@@ -67,22 +69,27 @@ const AddProduct = () => {
         <div className="container addProductMain pt-3 ps-3 pe-3  pb-3">
 
           <div className="row">
-            <div className="col-12 text-center fw-bold"><h2 className="fw-bold pt-3 pb-2"> Add Product</h2></div>
+            <div className="col-12 text-center fw-bold"><h2 className="fw-bold pt-3 pb-2"> Add Events</h2></div>
           </div>
 
           <div className="row mt-3 ">
             <div className="col-12">
-              <label htmlFor="name" >Product titel</label><br />
+              <label htmlFor="name" >Event Titel</label><br />
               <input type="text" placeholder="Type here" name="name" id="name" value={productDetails.name}
                 onChange={changeHandler}></input>
             </div>
           </div>
 
-          <div className="row mt-3 " style={{ width: "100%" }}>
-            <div className="col-12">
-              <label htmlFor="ingredients" >Product ingredients</label><br />
-              <textarea type="text" placeholder="Type here" name="ingredients" id="ingredients" value={productDetails.ingredients}
+          <div className="row mt-3 " >
+            <div className="col-12 col-sm-6" style={{ width: "50%" }}>
+              <label htmlFor="details" >Event Details</label><br />
+              <textarea type="text" placeholder="Type here" name="details" id="details" value={productDetails.details}
                 onChange={changeHandler}></textarea>
+            </div>
+            <div className="col-12 col-sm-6">
+              <label htmlFor="details" >Event Date</label><br />
+              <input type="date" placeholder="Type here" name="date" id="date" value={productDetails.date}
+                onChange={changeHandler}></input>
             </div>
           </div>
 
@@ -98,13 +105,17 @@ const AddProduct = () => {
           </div>
 
           <div className="row mt-3">
-            <div className="col-6 col-md-4">
-              <label htmlFor="category">Product Category</label>
+            <div className="col-12 col-sm-6 col-md-6">
+              <label htmlFor="category">Event Category</label>
               <select name="category" value={productDetails.category} onChange={changeHandler}>
-                <option value="breakfast">Breakfast</option>
-                <option value="lunch">Lunch</option>
-                <option value="dinner">Dinner</option>
+                <option value="UpComing_Event">UpComing-Event</option>
+                <option value="NextMonth_Event">NextMonth-Event</option>
               </select>
+            </div>
+            <div className="col-12 col-sm-6">
+              <label htmlFor="location" >Event Location</label><br />
+              <input type="text" placeholder="Type here" name="location" id="location" value={productDetails.location}
+                onChange={changeHandler}></input>
             </div>
           </div>
 

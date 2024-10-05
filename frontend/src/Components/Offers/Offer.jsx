@@ -12,8 +12,8 @@ const Offer = () => {
       <div className="row">
 
         <div className="col-md-5 col-sm-6  offer-left-side  ">
-          <h1 className='offer-heading'>Exclusive <br /> Offers For You</h1>
-          <p className='offer-subheading'>ONLY ON BEST COOKING RECIPES</p>
+          <h1 className='offer-heading'>Exclusive <br /> Events For You</h1>
+          <p className='offer-subheading'>ONLY ON BEST EVENT DATE</p>
           <Link to="#"> <button type="button" className="btn  offer-btn"> Check Now </button></Link>
         </div>
 

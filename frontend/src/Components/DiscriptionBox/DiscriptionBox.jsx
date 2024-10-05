@@ -14,8 +14,10 @@ const DiscriptionBox = () => {
       </div>
       <div className="row">
         <div className="col-12 border p-4">
-          <p className='discriptionPara' >A website that allows people to share and discover cooking recipes, offer cooking tutorials, and sell recipe eBooks, meal prep services, and digital cookbooks over the internet rather than in a traditional cookbook store or cooking school. Through a recipe-sharing website, a cook or chef can upload recipes.By combining the convenience of online learning with a marketplace for culinary tools, it revolutionizes the way people approach cooking and meal preparation. </p>
-          <p className='discriptionPara'>A platform that enables users to explore, create, and share unique cooking recipes, sell culinary courses, kitchen gadgets, and digital meal plans online rather than in a physical culinary school or kitchenware shop. Through a culinary website, food enthusiasts can publish their favorite recipes.This platform fosters a dynamic community where users can engage with one another, exchange tips, and inspire creativity in the kitchen. </p>
+          <p className='discriptionPara' >Welcome to our Event Management website, where culinary passion meets convenience! Discover a wide array of cooking classes, workshops, and culinary events tailored for all skill levels. Create and host your own cooking events, showcasing your favorite recipes and unique culinary techniques. Engage with fellow food enthusiasts through discussions, tips, and shared experiences in our vibrant community forum. </p>
+          <p className='discriptionPara'>Explore our marketplace for kitchen gadgets, meal prep services, and digital cookbooks that elevate your cooking experience. Stay updated with personalized notifications about upcoming events and special offers tailored just for you. Join us today and embark on a flavorful journey of culinary discovery and creativity!
+
+            Together, let’s make cooking an unforgettable experience!</p>
         </div>
       </div>
     </div>

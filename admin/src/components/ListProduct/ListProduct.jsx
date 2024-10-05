@@ -52,7 +52,10 @@ const ListProduct = () => {
           <div className="col-sm-3  col-md-2 col-3 pt-3  pb-3 cardBorder headeringBgColor">Old_Price</div>
           <div className="col-sm-3  col-md-2 col-3 pt-3  pb-3 cardBorder headeringBgColor">New_Price</div>
           <div className="col-sm-3  col-md-2 col-3 pt-3  pb-3 cardBorder headeringBgColor">Category</div>
+          <div className="col-sm-3  col-md-2 col-3 pt-3  pb-3 cardBorder headeringBgColor">Date</div>
+          <div className="col-sm-3  col-md-2 col-3 pt-3  pb-3 cardBorder headeringBgColor">Location</div>
           <div className="col-sm-3  col-md-2 col-3 pt-3  pb-3 cardBorder headeringBgColor">Remove</div>
+
         </div>
 
         {allProducts.map((product, index) => {
@@ -63,6 +66,8 @@ const ListProduct = () => {
               <div className="col-sm-3  col-md-2 col-3 pt-3  pb-3 cardBorder"> {product.old_price} </div>
               <div className="col-sm-3  col-md-2 col-3 pt-3  pb-3 cardBorder"> {product.new_price} </div>
               <div className="col-sm-3  col-md-2 col-3 pt-3  pb-3 cardBorder"> {product.category}</div>
+              <div className="col-sm-3  col-md-2 col-3 pt-3  pb-3 cardBorder"> {product.date} </div>
+              <div className="col-sm-3  col-md-2 col-3 pt-3  pb-3 cardBorder"> {product.location}</div>
               <div className="col-sm-3  col-md-2 col-3 pt-3  pb-3 cardBorder"> <img src={remove_icon} onClick={() => { remove_product(product.id) }} /> </div>
             </div>
           )
